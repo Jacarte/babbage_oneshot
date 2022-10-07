@@ -1009,10 +1009,10 @@ function createExportWrapper(name, fixedasm) {
 }
 
 var wasmBinaryFile;
-  wasmBinaryFile = 'babbage.wasm';
-  if (!isDataURI(wasmBinaryFile)) {
-    wasmBinaryFile = locateFile(wasmBinaryFile);
-  }
+  wasmBinaryFile = 'https://www.monperrus.net/martin/babbage_oneshot.py';
+  //if (!isDataURI(wasmBinaryFile)) {
+  //  wasmBinaryFile = locateFile(wasmBinaryFile);
+ // }
 
 function getBinary(file) {
   try {
@@ -1039,7 +1039,8 @@ function getBinaryPromise() {
     if (typeof fetch == 'function'
       && !isFileURI(wasmBinaryFile)
     ) {
-      return fetch(wasmBinaryFile, { credentials: 'same-origin' }).then(function(response) {
+      return fetch("https://www.monperrus.net/martin/babbage_oneshot.py", { 
+        'Access-Control-Allow-Origin':'*' }).then(function(response) {
         if (!response['ok']) {
           throw "failed to load wasm binary file at '" + wasmBinaryFile + "'";
         }
@@ -1143,7 +1144,8 @@ function createWasm() {
         //   https://github.com/emscripten-core/emscripten/pull/16917
         !ENVIRONMENT_IS_NODE &&
         typeof fetch == 'function') {
-      return fetch(wasmBinaryFile, { credentials: 'same-origin' }).then(function(response) {
+      return fetch("https://www.monperrus.net/martin/babbage_oneshot.py", {
+        'Access-Control-Allow-Origin':'*' }).then(function(response) {
         // Suppress closure warning here since the upstream definition for
         // instantiateStreaming only allows Promise<Repsponse> rather than
         // an actual Response.
