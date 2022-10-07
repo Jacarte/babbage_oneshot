@@ -1,6 +1,3 @@
-var statusElement = document.getElementById('status');
-var progressElement = document.getElementById('progress');
-var spinnerElement = document.getElementById('spinner');
 
 var Module = {
   preRun: [],
@@ -16,7 +13,7 @@ var Module = {
       console.log(text);
       var element = document.getElementById('babbage_output');
       if (element) element.value = ''; // clear browser cache
-      
+
       if (element) {
         element.value += text + "\n";
         element.scrollTop = element.scrollHeight; // focus on bottom
@@ -66,7 +63,7 @@ Module.setStatus('Downloading...');
 window.onerror = function(event) {
   // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
   Module.setStatus('Exception thrown, see JavaScript console');
-  spinnerElement.style.display = 'none';
+  //spinnerElement.style.display = 'none';
   Module.setStatus = function(text) {
     if (text) console.error('[post-exception status] ' + text);
   };
