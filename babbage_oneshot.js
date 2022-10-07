@@ -23,14 +23,14 @@ var Module = {
     };
   })(),
   canvas: (function() {
-    var canvas = document.getElementById('canvas');
+    /*var canvas = document.getElementById('canvas');
 
     // As a default initial behavior, pop up an alert when webgl context is lost. To make your
     // application robust, you may want to override this behavior before shipping!
     // See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
     canvas.addEventListener("webglcontextlost", function(e) { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
 
-    return canvas;
+    return canvas;*/
   })(),
   setStatus: function(text) {
     if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
@@ -42,17 +42,18 @@ var Module = {
     Module.setStatus.last.text = text;
     if (m) {
       text = m[1];
-      progressElement.value = parseInt(m[2])*100;
+      /*progressElement.value = parseInt(m[2])*100;
       progressElement.max = parseInt(m[4])*100;
       progressElement.hidden = false;
-      spinnerElement.hidden = false;
+      spinnerElement.hidden = false;*/
     } else {
+      /*
       progressElement.value = null;
       progressElement.max = null;
       progressElement.hidden = true;
-      if (!text) spinnerElement.style.display = 'none';
+      if (!text) spinnerElement.style.display = 'none';*/
     }
-    statusElement.innerHTML = text;
+   // statusElement.innerHTML = text;
   },
   totalDependencies: 0,
   monitorRunDependencies: function(left) {
