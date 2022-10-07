@@ -12,10 +12,10 @@ var Module = {
       //text = text.replace('\n', '<br>', 'g');
       console.log(text);
       var element = document.getElementById('babbage_output');
-      if (element) element.value = ''; // clear browser cache
+      if (element) element.innerHTML = ''; // clear browser cache
 
       if (element) {
-        element.value += text + "\n";
+        element.innerHTML += text + "\n";
         //element.scrollTop = element.scrollHeight; // focus on bottom
       }
     };
