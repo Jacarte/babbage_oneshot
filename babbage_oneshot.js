@@ -16,7 +16,7 @@ var Module = {
 
       if (element) {
         element.value += text + "\n";
-        element.scrollTop = element.scrollHeight; // focus on bottom
+        //element.scrollTop = element.scrollHeight; // focus on bottom
       }
     };
   })(),
@@ -31,7 +31,7 @@ var Module = {
     return canvas;*/
   })(),
   setStatus: function(text) {
-    if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
+    /*if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
     if (text === Module.setStatus.last.text) return;
     var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
     var now = Date.now();
@@ -40,17 +40,18 @@ var Module = {
     Module.setStatus.last.text = text;
     if (m) {
       text = m[1];
-      /*progressElement.value = parseInt(m[2])*100;
+      progressElement.value = parseInt(m[2])*100;
       progressElement.max = parseInt(m[4])*100;
       progressElement.hidden = false;
-      spinnerElement.hidden = false;*/
+      spinnerElement.hidden = false;
     } else {
-      /*
+      
       progressElement.value = null;
       progressElement.max = null;
       progressElement.hidden = true;
-      if (!text) spinnerElement.style.display = 'none';*/
-    }
+      if (!text) spinnerElement.style.display = 'none';
+    }*/
+    console.log(text)
    // statusElement.innerHTML = text;
   },
   totalDependencies: 0,
