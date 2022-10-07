@@ -18,7 +18,7 @@ int main() {
 	if (square>+INT_MAX)
 	    printf("Condition not satisfied before INT_MAX reached.");
 	else		   
-	    printf ("The smallest number whose square ends in 269696 is %d\n", current);
+	    printf ("%d", current);
 	   
         //the end
 	return 0 ;
