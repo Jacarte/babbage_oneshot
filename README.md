@@ -1,3 +1,3 @@
 # How to run it locally?
 
-`node index.js`
+`node babbage.js`
