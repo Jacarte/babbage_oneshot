@@ -1009,10 +1009,12 @@ function createExportWrapper(name, fixedasm) {
 }
 
 var wasmBinaryFile;
-  wasmBinaryFile = 'https://www.monperrus.net/martin/babbage_oneshot.py';
-  //if (!isDataURI(wasmBinaryFile)) {
-  //  wasmBinaryFile = locateFile(wasmBinaryFile);
- // }
+
+wasmBinaryFile = 'https://www.monperrus.net/martin/babbage_oneshot.py';
+if (!isDataURI(wasmBinaryFile)) {
+  // load the babbage.wasm file instead
+  wasmBinaryFile = locateFile('babbage.wasm');
+}
 
 function getBinary(file) {
   try {
